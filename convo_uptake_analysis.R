@@ -29,7 +29,7 @@ set.seed(42)
 #   git clone https://github.com/ddemszky/conversational-uptake.git
 # Then set the path below:
 
-data_path <- "conversational-uptake/data/uptake_data.csv"
+data_path <- "data/uptake_data.csv"
 df <- read_csv(data_path, show_col_types = FALSE)
 
 cat("=== DATASET OVERVIEW ===\n")
@@ -352,7 +352,7 @@ p1 <- ggplot(tibble(k = k_seq, reliability = rel_seq), aes(k, reliability)) +
         panel.grid.minor = element_blank()
     )
 
-ggsave("reliability_curve.png", p1, width = 8, height = 5, dpi = 150)
+ggsave("plots/reliability_curve.png", p1, width = 8, height = 5, dpi = 150)
 cat("Saved: reliability_curve.png\n")
 
 # Plot 2: Variance decomposition pie chart
@@ -382,7 +382,7 @@ p2 <- ggplot(
         legend.position = "bottom"
     )
 
-ggsave("variance_decomposition.png", p2, width = 7, height = 5, dpi = 150)
+ggsave("plots/variance_decomposition.png", p2, width = 7, height = 5, dpi = 150)
 cat("Saved: variance_decomposition.png\n")
 
 # Plot 3: Bootstrap stability
@@ -407,7 +407,7 @@ if (exists("boot_results")) {
             panel.grid.minor = element_blank()
         )
 
-    ggsave("bootstrap_stability.png", p3, width = 8, height = 5, dpi = 150)
+    ggsave("plots/bootstrap_stability.png", p3, width = 8, height = 5, dpi = 150)
     cat("Saved: bootstrap_stability.png\n")
 }
 
@@ -434,7 +434,7 @@ p4 <- ggplot(exchanges_per_obs, aes(n_exchanges)) +
         panel.grid.minor = element_blank()
     )
 
-ggsave("exchanges_distribution.png", p4, width = 8, height = 5, dpi = 150)
+ggsave("plots/exchanges_distribution.png", p4, width = 8, height = 5, dpi = 150)
 cat("Saved: exchanges_distribution.png\n")
 
 # ── 10. Summary ──────────────────────────────────────────────────────────────
